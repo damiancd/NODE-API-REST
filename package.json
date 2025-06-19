@@ -15,7 +15,9 @@
   "dependencies": {
     "express": "^5.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/damiancd/NODE-API-REST.git"
