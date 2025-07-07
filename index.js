@@ -1,30 +1,24 @@
-import express from 'express';
+import express from "express";
+import cors from "cors";
 const app = express();
 
-const products = [
-    {id: 1, name: "Product 1", price:100},
-    {id: 2, name: "Product 2", price:200},
-    {id: 3, name: "Product 3", price:300},
-];
+// app.use((req, res, next) => {
+//   res.json({ message: "En mantenimiento" });
+// });
 
-app.get ("/", (req,res) => {
-    res.send("<h1>Hola API</h1>");
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.json({ message: "API Rest en Node.js" });
 });
 
-//peticion de usuario para traer todos los productos
+import productsRouter from "./src/routes/products.router.js";
+app.use("/api", productsRouter);
 
-app.get("/products", (req,res) => {
-    res.json(products);
-})
-
-//peticion de usuario de un prod. en particular
-
-app.get("/products/:id", (req,res) => {
-    console.log(req.params.id);
-    const product = products.find((item)=> item.id == req.params.id);
-    res.json(product);
-})
-
+app.use((req, res, next) => {
+  res.status(404).json({ error: "Not Found" });
+});
 
 const PORT = 3000;
-app.listen(PORT, ()=> console.log(`http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
