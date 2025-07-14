@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
+// import fs from "fs";
+// import path from "path";
 
-const __dirname = import.meta.dirname;
+// const __dirname = import.meta.dirname;
 
-const jsonPath = path.join(__dirname, "./products.json");
-const json = fs.readFileSync(jsonPath, "utf-8");
-const products = JSON.parse(json);
+// const jsonPath = path.join(__dirname, "./products.json");
+// const json = fs.readFileSync(jsonPath, "utf-8");
+// const products = JSON.parse(json);
 
 // console.log(products);
 
@@ -18,7 +18,8 @@ import {
   addDoc,
   deleteDoc,
   setDoc,
-} from "firebase/firestore";
+  updateDoc
+  } from "firebase/firestore";
 
 const productsCollection = collection(db, "products");
 
@@ -43,7 +44,7 @@ export const getProductById = async (id) => {
   }
 };
 
-//Create Product
+//POST
 
 export const createProduct = async (data) => {
   try {
@@ -59,7 +60,7 @@ export async function updateProduct(id, productData) {
   try {
     const productRef = doc(productsCollection, id);
     const snapshot = await getDoc(productRef);
-
+    
     if (!snapshot.exists()) {
       return false;
     }
@@ -69,7 +70,26 @@ export async function updateProduct(id, productData) {
   } catch (error) {
     console.error(error);
   }
-}
+};
+
+//PATCH
+
+export async function patchProduct(id, partialData) {
+  try {
+    const productRef = doc(productsCollection, id);
+    const snapshot = await getDoc(productRef);
+
+    if (!snapshot.exists()) {
+      return false; // no encontrado
+    }
+
+    await updateDoc(productRef, partialData); // solo actualiza campos enviados
+    return { id, ...partialData };
+  } catch (error) {
+    console.error("Error al actualizar el producto:", error);
+    throw error;
+  }
+};
 
 //DELETE
 
