@@ -81,3 +81,4 @@ export const deleteProduct = async (id) => {
   } catch (error) {
     console.error(error);
   }
+  };
