@@ -1,5 +1,3 @@
-import 'dotenv/config';
-
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
@@ -9,12 +7,13 @@ const firebaseConfig = {
   projectId: process.env.FIREBASE_PROJECT_ID ,
   storageBucket: process.env.STORAGE_BUCKET,
   messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId: process.env.APP_ID
+  appId: process.env.FIREBASE_APP_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Initialize Firestore
 const db = getFirestore(app);
 
 export{db};
