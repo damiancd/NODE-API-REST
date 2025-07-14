@@ -25,19 +25,4 @@ router.patch('/products/:id', patchProduct);
 
 router.delete("/products/:id", deleteProduct);
 
-// router.put("/products/:id", (req, res) => {
-//   const productId = parseInt(req.params.id, 10);
-//   const productIndex = products.findIndex((p) => p.id === productId);
-
-//   if (productIndex === -1) {
-//     return res.status(404).json({ error: "Producto no encontrado" });
-//   }
-
-//   const { name, categories, description, price } = req.body;
-
-//   products[productIndex] = { id: productId, name, categories, description, price };
-//   res.json(products[productIndex]);
-// });
-
-
 export default router;
