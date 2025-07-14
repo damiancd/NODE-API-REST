@@ -22,6 +22,7 @@ import {
 
 const productsCollection = collection(db, "products");
 
+// GET All Products
 export const getAllProducts = async () => {
   try {
     const snapshot = await getDocs(productsCollection);
@@ -31,6 +32,7 @@ export const getAllProducts = async () => {
   }
 };
 
+// GET Products by ID
 export const getProductById = async (id) => {
   try {
     const productRef = doc(productsCollection, id);
@@ -40,6 +42,8 @@ export const getProductById = async (id) => {
     console.error(error);
   }
 };
+
+//Create Product
 
 export const createProduct = async (data) => {
   try {
@@ -66,6 +70,8 @@ export async function updateProduct(id, productData) {
     console.error(error);
   }
 }
+
+//DELETE
 
 export const deleteProduct = async (id) => {
   try {
