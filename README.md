@@ -49,16 +49,30 @@ Desarrollar un backend que permita gestionar artículos (productos) de manera se
 ├── middlewares/
 │   └── authentication.js    # Middleware JWT
 ├── index.js                 # Punto de entrada principal
-├── .env                     # Variables de entorno y Conexión a Firestore
+├── vercel.json              # indica a Vercel cómo debe construir y enrutar tu proyecto Node.js
+├── .env                     # Variables de entorno
 └── package.json             # Configuración del proyecto
 ```
 
+## 🌐 Despliegue en Vercel
+
+Este proyecto está desplegado públicamente en:
+
+🔗 **API Base URL:**  
+[https://node-api-rest-xi.vercel.app/](https://node-api-rest-xi.vercel.app/)
+
+🔐 **Login (POST):**  
+[https://node-api-rest-xi.vercel.app/auth/login](https://node-api-rest-xi.vercel.app/auth/login)
+
+
+
 ## ✅ Estado del proyecto
 
-✔️ CRUD funcional  
+✔️ CRUD funcional
+✔️ Probado con Postman 
 ✔️ Conectado a Firestore  
 ✔️ Autenticación con JWT  
-✔️ Probado con Postman
+✔️ Deploy en Vercel
 
 ---
 
