@@ -10,7 +10,7 @@ Este repositorio contiene una API RESTful desarrollada con **Node.js** y **Expre
 
 ## 📚 Objetivo del proyecto
 
-Desarrollar un backend que permita gestionar artículos (productos) de manera segura, con endpoints protegidos por autenticación basada en tokens. El proyecto es útil como base para un e-commerce, sistema de inventario o práctica de arquitectura backend moderna.
+Desarrollar un backend que permita gestionar artículos (productos) de manera segura, con endpoints protegidos por autenticación basada en tokens.
 
 ## 🚀 Endpoints disponibles
 
@@ -66,7 +66,3 @@ Desarrollar un backend que permita gestionar artículos (productos) de manera se
 
 **Damian Diaz**  
 ---
-
-## 📄 Licencia
-
-Este proyecto es de uso libre con fines educativos o de desarrollo. Si lo utilizás, se agradece la mención 😉
